@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  border: 1px black solid;
+}
+
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+}
+
+.deck footer {
+  background-color: gray;
+}
+
+.deck header {
+  background-color: darkgray;
+}
+
