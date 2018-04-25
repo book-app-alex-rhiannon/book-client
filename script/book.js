@@ -1,6 +1,6 @@
 'use strict';
 
-let app = {}
+var app = {}
 
 (function (module) {
 
