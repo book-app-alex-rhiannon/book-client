@@ -4,24 +4,44 @@
 <head>
 
 
-  <link type="style" href="css/normalize.css" />
-  <link type="style" href="css/base.css" />
-  <link type="style" href="css/layout.css" />
-  <link type="style" href="css.module.css" />
-
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/module.css" />
+  <script id="book-template" type="text/x-handlebars-template">
+    <section class="card" data-author="{{author}}">
+      <img src={{img}}>
+      <h1>{{title}}</h1>
+      <h2>{{author}}</h2>
+      <button>view details</button>
+    </section>
+  </script>
 </head>
 
 <body>
-  <ul>
-    <li> kdjnbjdfckvicxdjnmfcjdnfjxidsean ejmdfjdhjjkjffxdnjskujmkdudhjeuhjkiuyghdjkiuyfdhjmdkijugyfhnwsjkiuryfdgsvebnjktifuydghewejrtkgibughdsbwenrmt,kghbvjchxsbwenmrt,gfklvjchxgvbsdnemr,gklfjvchgxvbsawenrmf,gklvcj
-      bn </li>
-  </ul>
+  <main class="deck">
+    <header class="card">
+      <p>Filler Head</p>
+    </header>
+    <section id="all-books" class="card">
+      <p>Filler All</p>
+    </section>
+    <section id="single-book" class="card">
+      <p>Filler Single</p>
+    </section>
+    <section id="add-book" class="card">
+      <p>Filler Add</p>
+    </section>
+    <footer class="card">
+      <p>Filler Foot</p>
+    </footer>
+  </main>
 
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="script/app.js"></script>
+  <script src="script/book.js"></script>
 </body>
 
 </html>
