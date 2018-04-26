@@ -27,11 +27,6 @@ var app = app || {};
         $(this).parent().find(`#${book_id}*:nth-of-type(n+2)`).hide();
       }
     });
-  }
-}
-
-
-
-module.bookView = bookView;
-
-}) (app);
+  };
+  module.bookView = bookView;
+})(app);
