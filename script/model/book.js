@@ -21,7 +21,7 @@ var app = app || {};
   };
 
   Book.fetchAll = callback => {
-    $.get('/api/v1/books')
+    $.get('api/v1/books')
       .then(results => {
         Book.loadAll(results);
         callback();
@@ -30,7 +30,7 @@ var app = app || {};
 
   Book.truncateTable = callback => {
     $.ajax({
-      url: '/api/v1/books',
+      url: 'api/v1/books',
       method: 'DELETE'
     })
       .then(console.log)
@@ -40,14 +40,14 @@ var app = app || {};
   Book.prototype.insertRecord = callback => {
     let insertionObject = {};
     Object.assign(insertionObject, this);
-    $.post('/api/v1/books', insertionObject)
+    $.post('api/v1/books', insertionObject)
       .then(console.log)
       .then(callback);
   };
 
   Book.prototype.deleteRecord = callback => {
     $.ajax({
-      url: `/api/v1/books/${this.book_id}`,
+      url: `api/v1/books/${this.book_id}`,
       method: 'DELETE'
     })
       .then(console.log)
@@ -58,7 +58,7 @@ var app = app || {};
     let updateObject = {};
     Object.assign(updateObject, this);
     $.ajax({
-      url: `/api/v1/books/${this.book_id}`,
+      url: `api/v1/books/${this.book_id}`,
       method: 'PUT',
       data: updateObject
     });
