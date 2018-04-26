@@ -1,6 +1,16 @@
+button {
+  margin: auto;
+}
+
+img {
+  display: flex;
+  margin: auto;
+}
+
 .card {
   display: flex;
-  flex-direction: row;
+  flex-grow:1;
+  flex-direction: column;
   border: 1px black solid;
 }
 

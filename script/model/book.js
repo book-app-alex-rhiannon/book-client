@@ -1,6 +1,12 @@
 'use strict';
 
 var app = app || {};
+const ENV = {};
+
+ENV.isProduction = window.location.protocol === 'https:';
+ENV.productionApiUrl = 'https://gentle-forest-76052.herokuapp.com';
+ENV.developmentApiUrl = 'http://localhost:3000';
+ENV.apiUrl = ENV.isProduction ? ENV.productApiUrl : ENV.developmentApiUrl;
 
 (function (module) {
 
@@ -21,7 +27,7 @@ var app = app || {};
   };
 
   Book.fetchAll = callback => {
-    $.get('api/v1/books')
+    $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(results => {
         Book.loadAll(results);
         callback();
