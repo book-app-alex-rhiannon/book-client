@@ -1,6 +1,6 @@
 'use strict';
 
-var view = {}
+var app = app || {};
 
 (function (module) {
 
@@ -13,4 +13,4 @@ var view = {}
   }
   module.bookView = bookView;
 
-})(view)
+})(app)

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = {}
+var app = app || {};
 
 (function (module) {
 
@@ -21,7 +21,7 @@ var app = {}
   };
 
   Book.fetchAll = callback => {
-    $.get('/books')
+    $.get('/api/v1/books')
       .then(results => {
         Book.loadAll(results);
         callback();
@@ -30,7 +30,7 @@ var app = {}
 
   Book.truncateTable = callback => {
     $.ajax({
-      url: '/books',
+      url: '/api/v1/books',
       method: 'DELETE'
     })
       .then(console.log)
@@ -40,14 +40,14 @@ var app = {}
   Book.prototype.insertRecord = callback => {
     let insertionObject = {};
     Object.assign(insertionObject, this);
-    $.post('/books', insertionObject)
+    $.post('/api/v1/books', insertionObject)
       .then(console.log)
       .then(callback);
   };
 
   Book.prototype.deleteRecord = callback => {
     $.ajax({
-      url: `/books/${this.book_id}`,
+      url: `/api/v1/books/${this.book_id}`,
       method: 'DELETE'
     })
       .then(console.log)
@@ -58,7 +58,7 @@ var app = {}
     let updateObject = {};
     Object.assign(updateObject, this);
     $.ajax({
-      url: `/books/${this.book_id}`,
+      url: `/api/v1/books/${this.book_id}`,
       method: 'PUT',
       data: updateObject
     });
