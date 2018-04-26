@@ -8,13 +8,15 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/module.css" />
+
   <script id="book-template" type="text/x-handlebars-template">
-    <section class="card" data-author="{{author}}">
-      <img src={{img}}>
+    <article class="card" data-author="{{author}}">
+      <img src={{image_url}}>
       <h1>{{title}}</h1>
       <h2>{{author}}</h2>
-      <button>view details</button>
-    </section>
+      <p id ="{{book_id}}">{{description}}</p>
+      <button><a ref="{{book_id}}">view details</a></button>
+    </article>
   </script>
 </head>
 
@@ -42,7 +44,7 @@
   <script src="script/view/bookView.js"></script>
   <script>
     app.Book.fetchAll(app.bookView.initAllBooks);
-  </script>  
+  </script>
 </body>
 
 </html>
